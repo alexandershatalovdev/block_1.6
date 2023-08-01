@@ -34,15 +34,9 @@ module.exports = (env, argv) => {
     },
     module: {
       rules: [
-        // {
-        //   test: /\.html$/i,
-        //   loader: 'html-loader',
-        // },
         // Компилируем SCSS в CSS
         {
-          // test: /\.scss$/i,
           test: /\.(c|sa|sc)ss$/i,
-          // use: ["style-loader", "css-loader", "sass-loader"],
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
@@ -86,19 +80,13 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         title: 'CPS 1.6',
         filename: 'index.html',
-        template: 'src/template.html',
+        template: 'src/index.html',
         minify: isProduction
           ? false
           : {
               collapseWhitespace: true,
               removeComments: true,
             },
-        // minify: isProduction
-        //   ? {
-        //       collapseWhitespace: true,
-        //       removeComments: true,
-        //     }
-        //   : false,
       }),
       // Кладем стили в отдельный файлик
       new MiniCssExtractPlugin({
