@@ -28,13 +28,13 @@
     "dev": "webpack serve --mode development",
     "analyze": "webpack --mode production --profile --json > stats.json && webpack-bundle-analyzer stats.json",
     "clear": "rd /s /q dist",
-    "deploy": "gh-pages -d dist",
+    "deploy": "webpack --config webpack.config.js && gh-pages -d dist",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "author": "Alexander Shatalov <alexandershatalovdev@gmail.com>",
   "license": "ISC",
-  "homepage_temp": "https://your-username.github.io/your-repository/",
+  "homepage_temp": "https://alexandershatalovdev.github.io/block_1.6/",
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
