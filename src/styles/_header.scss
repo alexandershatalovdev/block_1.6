@@ -1,0 +1,46 @@
+@import 'mixins/_mixins';
+
+.header {
+  @include padding-x(16px);
+  @include padding-y(20px);
+  background-color: #fff;
+
+  &__divider--start {
+    display: none;
+  }
+
+  &__button {
+    @include header-btn;
+  }
+
+  &__text {
+    display: none;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    &--start {
+      column-gap: 16px;
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    &--middle {
+      display: none;
+    }
+
+    &--end {
+      column-gap: 16px;
+    }
+  }
+}

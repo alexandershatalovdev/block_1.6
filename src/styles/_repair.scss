@@ -1,0 +1,49 @@
+@import 'mixins/_mixins';
+
+.repair {
+  overflow-x: hidden;
+  margin-bottom: 20px;
+
+  &__heading {
+    @include header-sliders;
+  }
+
+  &__content.swiper-slide {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    width: 240px !important;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include padding-x(16px);
+    @include padding-y(16px);
+    box-sizing: border-box;
+  }
+
+  &__link {
+    margin-left: auto;
+  }
+
+  &__button {
+    @include arrow-btn;
+
+    &-icon {
+      @include arrow-btn-icon;
+    }
+  }
+
+  &__show-all-wrapper {
+    display: none;
+  }
+
+  &__text {
+    @include extend-btn;
+  }
+}
+
+.swiper-repair {
+  height: 220px;
+}

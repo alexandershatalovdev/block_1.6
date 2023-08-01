@@ -1,0 +1,18 @@
+@import 'mixins/_mixins';
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 16px;
+  @include padding-x(16px);
+  @include padding-y(20px);
+  color: $color-muted;
+  line-height: 16px;
+  text-align: center;
+
+  &__text {
+    margin: 0;
+    flex: 1;
+  }
+}

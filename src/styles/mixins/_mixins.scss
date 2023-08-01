@@ -1,0 +1,74 @@
+@mixin padding-x($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin padding-y($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin extend-btn {
+  display: block;
+  font-family: 'TT Lakes Bold';
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: $color;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@mixin header-sliders {
+  background: $section-gradient;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  margin: 0;
+  text-transform: uppercase;
+  color: $color-muted;
+  @include padding-x(16px);
+  @include padding-y(16px);
+}
+
+@mixin arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border: 2px solid $button;
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffe4ea;
+    border-color: #f21f62;
+    color: #f21f62;
+  }
+}
+
+@mixin arrow-btn-icon {
+  width: 7.5px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $button;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #f21f62;
+  }
+}

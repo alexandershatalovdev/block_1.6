@@ -1,0 +1,106 @@
+@import 'mixins/_mixins';
+
+.modal {
+  &-msg-overlay {
+    overflow-y: auto;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 2000;
+    box-sizing: border-box;
+    padding: 24px 16px;
+
+    &--open {
+      display: flex;
+    }
+  }
+
+  &-close-btn {
+    @include header-btn;
+  }
+
+  &-submit {
+    &-btn {
+      margin-left: auto;
+      margin-bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      background-color: $button;
+      border: none;
+      padding: 5px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 24px;
+      letter-spacing: -0.15px;
+      color: white;
+      font-weight: bold;
+      &:hover {
+        background-color: #f21f62;
+      }
+    }
+
+    &-icon {
+      margin-left: 20px;
+      width: 7px;
+      height: 9.63px;
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    margin: 36px 0 24px -16px;
+
+    &-title {
+      font-family: 'TT Lakes Bold';
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      margin: 0 0 0 12px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    color: $color-muted;
+
+    &-info {
+      &-highlight,
+      &-privacy {
+        color: $button;
+      }
+    }
+
+    input {
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      height: 50px;
+    }
+
+    textarea {
+      box-sizing: border-box;
+      height: 118px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px 16px;
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    placeholder {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

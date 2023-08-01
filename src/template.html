@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="icon" type="image/x-icon" href="<%= require('./assets/favicon.ico') %>" />
+  </head>
+  <body>
+    <!--------------------------- Modal/Call ------------------------------------->
+    <div class="modal-call-overlay" id="modalCallOverlay">
+      <div class="modal-dialog" id="modalCallDialog">
+        <button class="modal-close-btn modal-close-btn--call" id="modalCallCloseButton">
+          <img src="<%= require('./assets/close.svg') %>" alt="" class="modal-close-icon" />
+        </button>
+        <div class="modal-call-header">
+          <img src="<%= require('./assets/highlight.svg') %>" alt="" class="modal-call-header-icon" />
+          <h3 class="modal-header-title">Заказать звонок</h3>
+        </div>
+        <div class="modal-content">
+          <form class="contact-form">
+            <input type="tel" placeholder="Телефон" required />
+          </form>
+          <p class="modal-content-info">
+            Нажимая “отправить”, вы даете согласие на
+            <span class="modal-content-info-highlight">обработку персональных данных</span> и соглашаетесь с нашей
+            <span class="modal-content-info-privacy">политикой конфиденциальности</span>
+          </p>
+          <a href="#" class="modal-submit-btn">
+            Отправить
+            <img src="<%= require('./assets/brands/arrowWhite.svg') %>" alt="send" class="modal-submit-icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--------------------------- Modal/Call ------------------------------------->
+    <!--------------------------- Modal/Message ---------------------------------->
+    <div class="modal-msg-overlay" id="modalMsgOverlay">
+      <div class="modal-dialog" id="modalMsgDialog">
+        <button class="modal-close-btn modal-close-btn--msg" id="modalMsgCloseButton">
+          <img src="<%= require('./assets/close.svg') %>" alt="" class="modal-close-icon" />
+        </button>
+        <div class="modal-header">
+          <img src="<%= require('./assets/highlight.svg') %>" alt="" class="modal-header-icon" />
+          <h3 class="modal-header-title">Обратная связь</h3>
+        </div>
+        <div class="modal-content">
+          <form class="contact-form">
+            <input type="text" placeholder="Имя" required />
+            <input type="tel" placeholder="Телефон" required />
+            <input type="email" placeholder="Электронная почта" required />
+            <textarea placeholder="Сообщение" required></textarea>
+          </form>
+          <p class="modal-content-info">
+            Нажимая “отправить”, вы даете согласие на
+            <span class="modal-content-info-highlight">обработку персональных данных</span> и соглашаетесь с нашей
+            <span class="modal-content-info-privacy">политикой конфиденциальности</span>
+          </p>
+          <a href="#" class="modal-submit-btn">
+            Отправить
+            <img src="<%= require('./assets/brands/arrowWhite.svg') %>" alt="send" class="modal-submit-icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--------------------------- Modal/Message ---------------------------------->
+    <div class="container">
+      <!------------------------- Menu/Sidebar ------------------------------->
+      <div class="menu-sidebar">
+        <div class="menu-sidebar__nav-sections">
+          <div class="menu-sidebar__section menu-sidebar__section--top">
+            <div class="menu-sidebar__content">
+              <a href="#" class="menu-sidebar__link menu-sidebar__link--close">
+                <button class="menu-sidebar__button menu-sidebar__button--close">
+                  <img src="<%= require('./assets/closeMobile.svg') %>" alt="" class="menu-sidebar__icon" />
+                </button>
+              </a>
+              <img src="<%= require('./assets/logo.svg') %>" alt="" class="menu-sidebar__logo" />
+            </div>
+            <a href="#" class="menu-sidebar__link">
+              <button class="menu-sidebar__button">
+                <img src="<%= require('./assets/searchMobile.svg') %>" alt="" class="menu-sidebar__icon" />
+              </button>
+            </a>
+          </div>
+          <div class="menu-sidebar__section">
+            <ul class="menu-sidebar__navigation">
+              <li><a href="#" class="menu-sidebar__navigation-link">Ремонт техники</a></li>
+              <li><a href="#" class="menu-sidebar__navigation-link">Услуги и сервисы</a></li>
+              <li><a href="#" class="menu-sidebar__navigation-link">Корпоративным клиентам</a></li>
+              <li><a href="#" class="menu-sidebar__navigation-link">Продавцам техники</a></li>
+              <li><a href="#" class="menu-sidebar__navigation-link">Партнерам</a></li>
+              <li><a href="#" class="menu-sidebar__navigation-link">Производителям</a></li>
+              <li><a href="#" class="menu-sidebar__navigation-link">Наши сервисные центры</a></li>
+              <li><a href="#" class="menu-sidebar__navigation-link">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu-sidebar__section menu-sidebar__section--bottom">
+          <div class="menu-sidebar__buttons">
+            <a href="#" class="menu-sidebar__link menu-sidebar__link--modal-call">
+              <button class="menu-sidebar__button menu-sidebar__button--modal-call">
+                <img src="<%= require('./assets/phone.svg') %>" alt="" class="menu-sidebar__icon" />
+              </button>
+            </a>
+            <a href="#" class="menu-sidebar__link menu-sidebar__link--modal-msg">
+              <button class="menu-sidebar__button menu-sidebar__button--modal-msg">
+                <img src="<%= require('./assets/message.svg') %>" alt="" class="menu-sidebar__icon" />
+              </button>
+            </a>
+            <a href="#" class="menu-sidebar__link">
+              <button class="menu-sidebar__button">
+                <img src="<%= require('./assets/man.svg') %>" alt="" class="menu-sidebar__icon" />
+              </button>
+            </a>
+          </div>
+          <div class="menu-sidebar__contact">
+            <a href="mailto:mail@cps.com" class="menu-sidebar__contact-link menu-sidebar__contact-link--email"
+              >mail@cps.com</a
+            >
+            <a href="tel:88008908900" class="menu-sidebar__contact-link menu-sidebar__contact-link--phone"
+              >8 800 890 8900</a
+            >
+          </div>
+          <div class="menu-sidebar__languages">
+            <a href="#" class="menu-sidebar__languages-btn" data-lang="en">RU</a>
+            <a href="#" class="menu-sidebar__languages-btn" data-lang="ru">EN</a>
+            <a href="#" class="menu-sidebar__languages-btn" data-lang="ch">CH</a>
+          </div>
+        </div>
+      </div>
+      <!------------------------- Menu/Sidebar  ------------------------------->
+      <!------------------------- Header -------------------------------------->
+      <div class="header">
+        <nav class="header__nav">
+          <div class="header__menu header__menu--start">
+            <a href="#" class="header__link">
+              <button class="header__button header__button--burger">
+                <img src="<%= require('./assets/burger.svg') %>" alt="" class="header__icon" />
+              </button>
+            </a>
+            <img src="<%= require('./assets/divider.svg') %>" alt="" class="header__divider header__divider--start" />
+            <img src="<%= require('./assets/logo.svg') %>" alt="" class="header__logo" />
+          </div>
+
+          <div class="header__menu-container">
+            <div class="header__menu header__menu--middle">
+              <a href="#" class="header__link">
+                <button class="header__button">
+                  <img src="<%= require('./assets/phone.svg') %>" alt="" class="header__icon" />
+                </button>
+              </a>
+              <a href="#" class="header__link">
+                <button class="header__button">
+                  <img src="<%= require('./assets/message.svg') %>" alt="" class="header__icon" />
+                </button>
+              </a>
+              <a href="#" class="header__link">
+                <button class="header__button">
+                  <img src="<%= require('./assets/man.svg') %>" alt="" class="header__icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="header__menu header__menu--end">
+              <img src="<%= require('./assets/divider.svg') %>" alt="" class="header__divider header__divider--end" />
+              <div class="header__text-container">
+                <p class="header__text">Оставить заявку</p>
+                <a href="#" class="header__link">
+                  <button class="header__button">
+                    <img src="<%= require('./assets/repair.svg') %>" alt="" class="header__icon" />
+                  </button>
+                </a>
+              </div>
+              <div class="header__text-container">
+                <p class="header__text">Статус ремонта</p>
+                <a href="#" class="header__link">
+                  <button class="header__button">
+                    <img src="<%= require('./assets/search.svg') %>" alt="" class="header__icon" />
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!------------------------- Header -------------------------------------->
+      <hr class="container__divider container__divider--top" />
+      <!------------------------- Services ------------------------------------>
+      <div class="services">
+        <div class="services__header">
+          <img src="<%= require('./assets/highlight.svg') %>" alt="" class="services__highlight" />
+          <h1 class="services__title">Услуги и сервисы</h1>
+        </div>
+        <ul class="services__list">
+          <li class="services__item"><a href="#" class="services__link">Ремонтируемые устройства</a></li>
+          <li class="services__item"><a href="#" class="services__link">Дополнительные услуги</a></li>
+          <li class="services__item"><a href="#" class="services__link">Цены на услуги</a></li>
+          <li class="services__item"><a href="#" class="services__link">Специальные цены</a></li>
+          <li class="services__item"><a href="#" class="services__link">Адреса сервисных центров</a></li>
+          <li class="services__item"><a href="#" class="services__link">Отзывы</a></li>
+        </ul>
+        <div class="services__content">
+          <div class="services__text-and-read-more">
+            <div class="services__text-content">
+              <p class="services__paragraph">
+                Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете
+                отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+              </p>
+              <p class="services__paragraph">
+                Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое
+                количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
+                очередь, советуют нас родным и близким.
+              </p>
+            </div>
+            <div class="services__read-more-wrapper">
+              <button class="services__read-more" id="readMore">
+                <img
+                  src="<%= require('./assets/expand.svg') %>"
+                  alt="Expand Icon"
+                  class="services__icon"
+                  id="readMoreIcon"
+                />
+                <span class="services__read-more-text" id="readMoreText">Читать далее</span>
+              </button>
+            </div>
+          </div>
+          <div class="services__image">
+            <img src="<%= require('./assets/cps.png') %>" alt="" class="services__img" />
+          </div>
+        </div>
+      </div>
+      <!------------------------- Services ------------------------------------>
+      <hr class="container__divider" />
+      <!--------------------------- Brands ------------------------------------>
+      <div class="brands">
+        <h2 class="brands__heading">Ремонт техники различных брендов</h2>
+
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="brands__content swiper-slide">
+              <img src="<%= require('./assets/brands/lenovo.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide">
+              <img src="<%= require('./assets/brands/samsung.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide">
+              <img src="<%= require('./assets/brands/apple.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide">
+              <img src="<%= require('./assets/brands/viewsonic.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide">
+              <img src="<%= require('./assets/brands/bosch.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide">
+              <img src="<%= require('./assets/brands/hp.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide show-big">
+              <img src="<%= require('./assets/brands/acer.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide show-big">
+              <img src="<%= require('./assets/brands/sony.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide show-medium">
+              <img src="<%= require('./assets/brands/lenovo.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide show-medium">
+              <img src="<%= require('./assets/brands/samsung.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="brands__content swiper-slide show-medium">
+              <img src="<%= require('./assets/brands/apple.svg') %>" alt="" class="brands__logo" />
+              <a href="#" class="brands__link">
+                <button class="brands__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="brands__button-icon" />
+                </button>
+              </a>
+            </div>
+          </div>
+          <!-- Add navigation dots -->
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="brands__show-all-wrapper">
+          <button class="brands__show-all" id="showMore">
+            <img src="<%= require('./assets/expand.svg') %>" alt="Expand Icon" class="brands__icon" id="showMoreIcon" />
+            <span class="brands__text" id="showMoreText">Показать все</span>
+          </button>
+        </div>
+      </div>
+      <!--------------------------- Brands ------------------------------------>
+      <hr class="container__divider" />
+      <!--------------------------- Repair ------------------------------------>
+      <div class="repair">
+        <h2 class="repair__heading">Ремонт различных видов техники</h2>
+
+        <div class="swiper swiper-repair">
+          <div class="swiper-wrapper swiper-wrapper-repair">
+            <div class="repair__content swiper-slide">
+              <span class="repair__text">Ремонт ноутбуков</span>
+              <a href="#" class="repair__link">
+                <button class="repair__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="repair__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="repair__content swiper-slide">
+              <span class="repair__text">Ремонт планшетов</span>
+              <a href="#" class="repair__link">
+                <button class="repair__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="repair__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="repair__content swiper-slide">
+              <span class="repair__text">Ремонт ПК</span>
+              <a href="#" class="repair__link">
+                <button class="repair__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="repair__button-icon" />
+                </button>
+              </a>
+            </div>
+
+            <div class="repair__content swiper-slide show-medium">
+              <span class="repair__text">Ремонт мониторов</span>
+              <a href="#" class="repair__link">
+                <button class="repair__button">
+                  <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="repair__button-icon" />
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-repair"></div>
+        </div>
+
+        <div class="repair__show-all-wrapper">
+          <button class="repair__show-all" id="showMoreRepair">
+            <img
+              src="<%= require('./assets/expand.svg') %>"
+              alt="Expand Icon"
+              class="repair__icon"
+              id="showMoreRepairIcon"
+            />
+            <span class="repair__text" id="showMoreRepairText">Показать все</span>
+          </button>
+        </div>
+      </div>
+      <!--------------------------- Repair ------------------------------------>
+      <hr class="container__divider" />
+      <!--------------------------- Prices ------------------------------------>
+      <div class="prices">
+        <h2 class="prices__heading">Цены на услуги</h2>
+
+        <div class="prices__content">
+          <table class="prices__table">
+            <thead class="prices__table-header">
+              <tr class="prices__row">
+                <th class="prices__header">Ремонтные услуги</th>
+                <th class="prices__header">Цена</th>
+                <th class="prices__header" colspan="2">Срок</th>
+                <!-- <th></th> -->
+              </tr>
+            </thead>
+            <tbody class="prices__table-body">
+              <tr class="prices__row">
+                <td class="prices__data">Диагностика</td>
+                <td class="prices__data">Бесплатно</td>
+                <td class="prices__data">30 мин</td>
+                <td class="prices__data prices__data-btn">
+                  <a href="#" class="prices__order-btn">
+                    Заказать
+                    <img
+                      src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                      alt="Order"
+                      class="prices__order-icon"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr class="prices__row">
+                <td class="prices__data">Замена дисплея</td>
+                <td class="prices__data">1 000 ₽</td>
+                <td class="prices__data">30-120 мин</td>
+                <td class="prices__data prices__data-btn">
+                  <a href="#" class="prices__order-btn">
+                    Заказать
+                    <img
+                      src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                      alt="Order"
+                      class="prices__order-icon"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr class="prices__row">
+                <td class="prices__data">Замена полифонического динамика</td>
+                <td class="prices__data">1 000 ₽</td>
+                <td class="prices__data">30-120 мин</td>
+                <td class="prices__data prices__data-btn">
+                  <a href="#" class="prices__order-btn">
+                    Заказать
+                    <img
+                      src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                      alt="Order"
+                      class="prices__order-icon"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr class="prices__row">
+                <td class="prices__data">Тестирование с выдачей технического заключения</td>
+                <td class="prices__data">1 000 ₽</td>
+                <td class="prices__data">30-120 мин</td>
+                <td class="prices__data prices__data-btn">
+                  <a href="#" class="prices__order-btn">
+                    Заказать
+                    <img
+                      src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                      alt="Order"
+                      class="prices__order-icon"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr class="prices__row">
+                <td class="prices__data">Замена программного обеспечения</td>
+                <td class="prices__data">1 000 ₽</td>
+                <td class="prices__data">30-120 мин</td>
+                <td class="prices__data prices__data-btn">
+                  <a href="#" class="prices__order-btn">
+                    Заказать
+                    <img
+                      src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                      alt="Order"
+                      class="prices__order-icon"
+                    />
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="swiper swiper-prices">
+          <div class="swiper-wrapper swiper-wrapper-prices">
+            <div class="swiper-slide swiper-slide-prices">
+              <table class="swiper__table">
+                <tbody class="swiper__table-body">
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Ремонтные услуги</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">Диагностика</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Цена</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">Бесплатно</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Срок</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td class="swiper__data">30 мин</td>
+                    <td class="swiper__data swiper__data-button">
+                      <a href="#" class="prices__order-btn swiper__btn-slide">
+                        Заказать
+                        <img
+                          src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                          alt="Order"
+                          class="prices__order-icon"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="swiper-slide swiper-slide-prices">
+              <table class="swiper__table">
+                <tbody class="swiper__table-body">
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Ремонтные услуги</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">Замена дисплея</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Цена</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">1 000 ₽</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Срок</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td class="swiper__data">30-120 мин</td>
+                    <td class="swiper__data swiper__data-button">
+                      <a href="#" class="prices__order-btn swiper__btn-slide">
+                        Заказать
+                        <img
+                          src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                          alt="Order"
+                          class="prices__order-icon"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="swiper-slide swiper-slide-prices">
+              <table class="swiper__table">
+                <tbody class="swiper__table-body">
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Ремонтные услуги</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">Замена полифонического динамика</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Цена</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">1 000 ₽</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Срок</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td class="swiper__data">30-120 мин</td>
+                    <td class="swiper__data swiper__data-button">
+                      <a href="#" class="prices__order-btn swiper__btn-slide">
+                        Заказать
+                        <img
+                          src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                          alt="Order"
+                          class="prices__order-icon"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="swiper-slide swiper-slide-prices">
+              <table class="swiper__table">
+                <tbody class="swiper__table-body">
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Ремонтные услуги</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">Тестирование с выдачей технического заключения</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Цена</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">1 000 ₽</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Срок</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td class="swiper__data">30-120 мин</td>
+                    <td class="swiper__data swiper__data-button">
+                      <a href="#" class="prices__order-btn swiper__btn-slide">
+                        Заказать
+                        <img
+                          src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                          alt="Order"
+                          class="prices__order-icon"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="swiper-slide swiper-slide-prices">
+              <table class="swiper__table">
+                <tbody class="swiper__table-body">
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Ремонтные услуги</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">Замена программного обеспечения</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Цена</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td colspan="2" class="swiper__data">1 000 ₽</td>
+                  </tr>
+                  <tr class="swiper__row">
+                    <th colspan="2" class="swiper__header">Срок</th>
+                  </tr>
+                  <tr class="swiper__row">
+                    <td class="swiper__data">30-120 мин</td>
+                    <td class="swiper__data swiper__data-button">
+                      <a href="#" class="prices__order-btn swiper__btn-slide">
+                        Заказать
+                        <img
+                          src="<%= require('./assets/brands/arrowWhite.svg') %>"
+                          alt="Order"
+                          class="prices__order-icon"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-prices"></div>
+        </div>
+
+        <div class="prices__info-container">
+          <p class="prices__info-text">
+            Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого
+            предложения на постоянное обслуживание, оставьте заявку.
+          </p>
+          <div class="prices__link-container">
+            <a class="prices__link">
+              <span class="prices__link-text">Получить коммерческое предложение</span>
+              <img src="<%= require('./assets/brands/arrow.svg') %>" alt="" class="prices__link-icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--------------------------- Prices ------------------------------------>
+      <hr class="container__divider" />
+      <!------------------------- Footer -------------------------------------->
+      <div class="footer">
+        <p class="footer__text footer__text--copyright">
+          © 2019 CPS<br />
+          Разработано командой Apesong
+        </p>
+        <p class="footer__text footer__text--privacy-policy">Политика конфиденциальности</p>
+        <p class="footer__text footer__text--disclaimer">
+          Информация, размещенная на данной странице, не является публичной офертой
+        </p>
+      </div>
+      <!------------------------- Footer -------------------------------------->
+    </div>
+  </body>
+</html>

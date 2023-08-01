@@ -1,0 +1,14 @@
+body {
+  background: $bg;
+  min-height: 100vh;
+  font-family: 'TT Lakes Regular', Arial, sans-serif;
+  color: $color;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+}
+
+.container__divider {
+  border: 1px solid $hr-line;
+  margin: 0;
+}

@@ -1,0 +1,109 @@
+@import 'mixins/_mixins';
+
+.prices {
+  margin-bottom: 44px;
+
+  &__heading {
+    @include header-sliders;
+  }
+
+  &__content {
+    display: none;
+  }
+
+  .swiper {
+    &-prices {
+      height: 245px;
+    }
+
+    &-slide-prices {
+      background-color: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 6px;
+      width: 260px !important;
+      height: 200px;
+      @include padding-x(16px);
+      @include padding-y(16px);
+      box-sizing: border-box;
+    }
+
+    &__header {
+      color: $color-muted;
+      text-align: left;
+      line-height: 16px;
+    }
+
+    &__table {
+      width: 100%;
+      border-collapse: separate;
+    }
+
+    &__data {
+      padding-bottom: 5px;
+
+      &-button {
+        text-align: right;
+      }
+    }
+
+    &__btn-slide {
+      @include padding-y(2.5px);
+    }
+  }
+
+  &__order {
+    &-btn {
+      display: inline-flex;
+      align-items: center;
+      background-color: $button;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 24px;
+      letter-spacing: -0.15px;
+      color: white;
+      font-weight: bold;
+      &:hover {
+        background-color: #f21f62;
+      }
+    }
+
+    &-icon {
+      margin-left: 20px;
+      width: 7px;
+      height: 9.63px;
+    }
+  }
+
+  &__info {
+    &-container {
+      margin: 8px 16px 16px;
+    }
+
+    &-text {
+      line-height: 20px;
+    }
+  }
+
+  &__link {
+    &-container {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &-text {
+      font-family: 'TT Lakes Bold';
+      line-height: 24px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    &-icon {
+      padding-left: 5px;
+    }
+  }
+}

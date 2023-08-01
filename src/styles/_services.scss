@@ -1,0 +1,117 @@
+@import 'mixins/_mixins';
+
+.services {
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  &__title {
+    font-family: 'TT Lakes Bold';
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    margin: 0 0 0 12px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    @include padding-x(16px);
+    justify-content: space-between;
+    overflow-x: auto;
+    margin: 24px 0;
+
+    a.services__link {
+      display: inline-block;
+      padding: 5px 10px;
+      color: $color-muted;
+      font-family: 'TT Lakes Medium';
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      text-decoration: none;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      transition:
+        background-color 0.2s,
+        border-color 0.2s;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #fff;
+        border-color: $services-btn-border;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+        border-color: $services-btn-border;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 322px;
+    box-sizing: border-box;
+  }
+
+  &__text-and-read-more {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  &__text-content {
+    overflow: hidden;
+    flex-grow: 1;
+    @include padding-x(16px);
+    overflow-wrap: break-word;
+  }
+
+  &__paragraph {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  &__read-more-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include padding-x(16px);
+
+    img.services__icon {
+      margin-right: 22px;
+      transition: transform 0.3s ease;
+    }
+
+    img.services__icon.rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__read-more {
+    @include extend-btn;
+  }
+
+  &__image {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 24px;
+
+    img.services__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

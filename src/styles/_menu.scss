@@ -1,0 +1,138 @@
+@import 'mixins/_mixins';
+
+.menu-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  width: 320px;
+  // height: 676px;
+  box-sizing: border-box;
+  padding: 18px 16px;
+
+  &--hidden {
+    display: none;
+  }
+
+  &--open {
+    // Final state (open)
+    transform: translateX(0);
+  }
+
+  &__section--top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__section--bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 20px 0;
+  }
+
+  &__buttons,
+  &__contact,
+  &__languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contact-link--phone {
+    font-family: 'TT Lakes Bold';
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+  }
+
+  &__contact-link,
+  &__languages-btn {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: $color;
+  }
+
+  &__contact-link:hover,
+  &__languages-btn:hover {
+    color: $color-muted;
+  }
+
+  &__languages-btn,
+  &__contact-link--email {
+    font-family: 'TT Lakes Medium';
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-left: 16px;
+  }
+
+  &__button {
+    @include header-btn;
+  }
+
+  &__navigation {
+    list-style: none;
+    padding: 24px 0 0;
+    margin: 0;
+
+    li {
+      position: relative;
+    }
+
+    &-link {
+      display: block;
+      padding-bottom: 24px;
+      color: $color;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+
+      &:hover,
+      &.active {
+        color: $color-muted;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -16px;
+        top: -10%;
+        width: 4px;
+        height: 32px;
+        background-image: url('~assets/highlight.svg');
+        background-size: contain;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        li:hover &,
+        li.active & {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

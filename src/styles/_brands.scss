@@ -1,0 +1,46 @@
+@import 'mixins/_mixins';
+
+.brands {
+  margin-bottom: 20px;
+
+  &__heading {
+    @include header-sliders;
+  }
+
+  &__content.swiper-slide {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    width: 240px !important;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    @include padding-x(16px);
+    box-sizing: border-box;
+  }
+
+  &__link {
+    margin-left: auto;
+  }
+
+  &__button {
+    @include arrow-btn;
+
+    &-icon {
+      @include arrow-btn-icon;
+    }
+  }
+
+  &__show-all-wrapper {
+    display: none;
+  }
+}
+
+.swiper {
+  height: 130px;
+  margin-left: 16px !important;
+
+  &-wrapper {
+    padding-top: 16px;
+  }
+}
